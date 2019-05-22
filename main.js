@@ -1,14 +1,17 @@
 const largeImg = document.getElementById("largeImg");
 const gallery = document.getElementById("gallery");
-gallery.addEventListener("click", function (event) {
-    event.preventDefault();
-});
 
 function showImage(event) {
-    if (event.target.tagName === 'IMG') {
-        largeImg.setAttribute('src', event.target.parentElement.href);
-    } else if (event.target.tagName === 'A') {
-        largeImg.setAttribute('src', event.target.href);
+    event.preventDefault();
+    const {target} = event;
+    const {tagName} = target;
+
+    if (tagName === 'IMG') {
+        largeImg.setAttribute('src', target.parentElement.href);
+        return;
+    }
+    if (tagName === 'A') {
+        largeImg.setAttribute('src', target.href);
     }
 }
 
