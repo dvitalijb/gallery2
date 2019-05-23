@@ -1,10 +1,10 @@
-const largeImg = document.getElementById("largeImg");
-const gallery = document.getElementById("gallery");
+const largeImg = document.getElementById('largeImg');
+const gallery = document.getElementById('gallery');
 
 function showImage(event) {
     event.preventDefault();
-    const {target} = event;
-    const {tagName} = target;
+    const { target } = event;
+    const { tagName } = target;
 
     if (tagName === 'IMG') {
         largeImg.setAttribute('src', target.parentElement.href);
